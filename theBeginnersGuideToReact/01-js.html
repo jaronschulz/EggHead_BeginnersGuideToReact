@@ -34,7 +34,20 @@
         className: 'container',
         children: 'Hello World!',
       }
-      const element = <div {...props} className="my-class">Overwrite</div>
+      const Message = props => <div>{props.children}</div>
+      const element = (
+      <div className="container">
+
+      <Message>
+      Hello Wold!
+        <Message>
+        Goodbye Wold!
+        </Message>
+      </Message>
+
+      </div>
+      )
+
       ReactDOM.render(
         element,
         rootElement
