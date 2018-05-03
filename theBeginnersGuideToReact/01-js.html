@@ -1,19 +1,43 @@
-<div id='root'></div>
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-<script type="text/javascript">
-  console.log('Loading...');
-  const rootElement = document.getElementById('root');
-  // const element = document.createElement('div');
-  // element.textContent = 'hello world';
-  // element.className = 'container';
-  // rootElement.appendChild(element);
-  const element = React.createElement(
-    'div', {
-      className: 'container',
-      children: 'Hello World'
-    })
-  ReactDOM.render(element, rootElement);
-  console.log(element);
 
-</script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id='root'></div>
+    <script type="text/babel">
+
+      const rootElement = document.getElementById('root');
+
+    //THE JS WAY
+
+      // const element = document.createElement('div');
+      // element.textContent = 'hello world';
+      // element.className = 'container';
+      // rootElement.appendChild(element);
+
+    // THE REACT (createElement) WAY
+
+      // const element = React.createElement(
+      //   'div', {
+      //     className: 'container',
+      //     children: 'Hello World'
+      //   })
+
+    // THE REACT (JSX) WAY
+
+      // const element = <div className="container">Hello World<div/>
+      //
+      // ReactDOM.render(element, rootElement);
+      const content = 'Hello World!'
+      const myClassName = 'container'
+      const props = {
+        className: 'container',
+        children: 'Hello World!',
+      }
+      const element = <div {...props} className="my-class">Overwrite</div>
+      ReactDOM.render(
+        element,
+        rootElement
+      );
+
+    </script>
